@@ -1,5 +1,4 @@
-
-
+'use strict';
 
 function Accumulator(startingValue) {
   if (!new.target) {
@@ -8,7 +7,7 @@ function Accumulator(startingValue) {
 
   this.value = startingValue;
   // this.prototype = new ReadProto();
-  this.prototype = "test";
+  // this.__proto__ = new ReadProto();
 }
 
 function ReadProto() {
@@ -23,38 +22,32 @@ function ReadProto() {
     }
     return this.value += newValue;
   }
+
 }
 
 Accumulator.prototype = new ReadProto();
 
+const acc1 = new Accumulator(10);
+const acc2 = new Accumulator(11);
 
-const acc = new Accumulator(10);
+console.log(acc1, acc2);
 
-console.log(acc);
 
-// =======
-class Medium {
-  constructor(username) {
-    this.username = username;
-  }
-  post(message) {
-    const date = new Date();
-    this.message = `${message} Date: ${date} by ${this.username}`; 
-    return this.message;
-  }
-}
-class Blog extends Medium {
-  constructor(domain) {
-    super();
-    this.domain = domain;
-  }
-  post(message) { 
-    super.post(message);
-    this.blogPost = `${this.message} link: ${this.domain}`;
-    return this.blogPost;
-  }
-}
-let medium = new Medium('artemhp');
-console.log(medium.post('Misconceptions OOP in JS'));
-let blog = new Blog('artem.today');
-console.log(blog.post('Misconceptions OOP in JS'));
+// Accumulator.prototype.setValue = function () {
+//   return this.value += this.read();
+// }
+
+// Accumulator.prototype.read = function(){
+//   const newValue = +prompt("Enter number:");
+//     if (isNaN(newValue - newValue)) {
+//       return;
+//     }
+//     return this.value += newValue;
+// };
+
+// Array.prototype.push = function (item) {
+//   this[10] = item;
+// }
+
+// let arr2 = new Array()
+// arr2.push(2)
