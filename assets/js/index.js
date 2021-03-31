@@ -1,0 +1,3 @@
+function Accumulator (startingValue){
+  
+}
