@@ -28,7 +28,7 @@ function ReadProto() {
 Accumulator.prototype = new ReadProto();
 
 const acc1 = new Accumulator(10);
-const acc2 = new Accumulator(11);
+const acc2 = new Accumulator(15);
 
 console.log(acc1, acc2);
 
