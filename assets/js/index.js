@@ -4,7 +4,7 @@ function Accumulator(startingValue = 0) {
   if (!new.target) {
     new Accumulator(startingValue);
   }
-  this.value = isNaN(startingValue - 1) ? 0 : startingValue;
+  this.value = isNaN(startingValue - 1) ? 0 : +startingValue;
   // this.prototype = new ReadProto();
   // this.__proto__ = new ReadProto();
 }
@@ -26,7 +26,7 @@ function ReadProto() {
 
 Accumulator.prototype = new ReadProto();
 
-const acc1 = new Accumulator(10);
+const acc1 = new Accumulator('10');
 const acc2 = new Accumulator(15);
 
 console.log(acc1, acc2);
