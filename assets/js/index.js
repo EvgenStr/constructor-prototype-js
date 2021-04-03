@@ -11,11 +11,10 @@ function Accumulator(startingValue = 0) {
 }
 
 function ReadProto() {
+  if (!new.target) {
+    new ReadProto();
+  }
   this.read = function () {
-    if (!new.target) {
-      new ReadProto();
-    }
-
     const newValue = +prompt("Enter number:");
     if (isNaN(newValue)) {
       return this.value;
