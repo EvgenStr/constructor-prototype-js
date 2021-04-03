@@ -4,7 +4,7 @@ function Accumulator(startingValue = 0) {
   if (!new.target) {
     new Accumulator(startingValue);
   }
-  this.value = isNaN(startingValue - 1) ? 0 : +startingValue;
+  this.value = isNaN(startingValue) ? 0 : +startingValue;
   // this.prototype = new ReadProto();
   // this.__proto__ = new ReadProto();
 }
@@ -16,7 +16,7 @@ function ReadProto() {
     }
 
     const newValue = +prompt("Enter number:");
-    if (isNaN(newValue - newValue)) {
+    if (isNaN(newValue)) {
       return;
     }
     return this.value += newValue;
